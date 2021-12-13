@@ -1,0 +1,62 @@
+<div class="max-w-3xl mx-auto mt-16">
+  <h1 class="text-center mb-16 text-3xl font-semibold font-mono text-gray-700" *ngIf="ganador==0">Turno del
+    jugador: <span class="text-gray-100 font-sans text-4xl" [ngClass]="{jugador:jugador==1}">{{jugador == 1 ? "X" : "O"}}</span>
+  </h1>
+
+  <h1 class="text-center mb-16 text-3xl font-semibold font-mono text-gray-700" *ngIf="ganador!=0">Ganador de la Partida:
+    <span class="text-gray-100 font-sans text-4xl" [ngClass]="{jugador:ganador==1}">{{ganador == 1 ? "X" : "O"}}</span>
+  </h1>
+  <div class="flex flex-col ">
+    <div class="flex border-b-8 border-gray-600 rounded shadow-inner">
+      <div class="h-56 w-1/3 border-r-8  border-gray-600 rounded" (click)="turno(0,0)">
+        <p class="text-gray-100 font-sans text-9xl text-center pt-12 font-semibold" [ngClass]="{jugador:tablero[0][0]==1}">
+          {{tablero[0][0] == 0 ? "" : tablero[0][0] == 1 ? "X" : "0"}}</p></div>
+      <div class="h-56 w-1/3 border-r-8  border-gray-600 rounded" (click)="turno(0,1)">
+        <p class="text-gray-100 font-sans text-9xl text-center pt-12 font-semibold" [ngClass]="{jugador:tablero[0][1]==1}">
+          {{tablero[0][1] == 0 ? "" : tablero[0][1] == 1 ? "X" : "0"}}</p>
+      </div>
+      <div class="h-56 w-1/3" (click)="turno(0,2)">
+        <p class="text-gray-100 font-sans text-9xl text-center pt-12 font-semibold" [ngClass]="{jugador:tablero[0][2]==1}">
+          {{tablero[0][2] == 0 ? "" : tablero[0][2] == 1 ? "X" : "0"}}</p>
+      </div>
+
+    </div>
+
+    <div class="flex border-b-8 rounded border-gray-600 shadow-inner">
+      <div class="h-56 w-1/3 border-r-8 border-gray-600  rounded" (click)="turno(1,0)">
+        <p class="text-gray-100 font-sans text-9xl text-center pt-12 font-semibold" [ngClass]="{jugador:tablero[1][0]==1}">
+          {{tablero[1][0] == 0 ? "" : tablero[1][0] == 1 ? "X" : "0"}}</p>
+      </div>
+      <div class="h-56 w-1/3 border-r-8  border-gray-600 rounded" (click)="turno(1,1)">
+        <p class="text-gray-100 font-sans text-9xl text-center pt-12 font-semibold" [ngClass]="{jugador:tablero[1][1]==1}">
+          {{tablero[1][1] == 0 ? "" : tablero[1][1] == 1 ? "X" : "0"}}</p>
+      </div>
+      <div class="h-56 w-1/3" (click)="turno(1,2)">
+        <p class="text-gray-100 font-sans text-9xl text-center pt-12 font-semibold" [ngClass]="{jugador:tablero[1][2]==1}">
+          {{tablero[1][2] == 0 ? "" : tablero[1][2] == 1 ? "X" : "0"}}</p>
+      </div>
+    </div>
+
+    <div class="flex shadow-inner">
+      <div class="h-56 w-1/3 border-r-8 border-gray-600  rounded" (click)="turno(2,0)">
+        <p class="text-gray-100 font-sans text-9xl text-center pt-12 font-semibold" [ngClass]="{jugador:tablero[2][0]==1}">
+          {{tablero[2][0] == 0 ? "" : tablero[2][0] == 1 ? "X" : "0"}}</p>
+      </div>
+      <div class="h-56 w-1/3 border-r-8 border-gray-600 rounded" (click)="turno(2,1)">
+        <p class="text-gray-100 font-sans text-9xl text-center pt-12 font-semibold" [ngClass]="{jugador:tablero[2][1]==1}">
+          {{tablero[2][1] == 0 ? "" : tablero[2][1] == 1 ? "X" : "0"}}</p>
+      </div>
+      <div class="h-56 w-1/3" (click)="turno(2,2)">
+        <p class="text-gray-100 font-sans text-9xl text-center pt-12 font-semibold" [ngClass]="{jugador:tablero[2][2]==1}">
+          {{tablero[2][2] == 0 ? "" : tablero[2][2] == 1 ? "X" : "0"}}</p>
+      </div>
+    </div>
+
+<div >
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 float-right text-gray-700 mt-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" (click)="reiniciar()">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+  </svg>
+</div>
+  </div>
+
+</div>
